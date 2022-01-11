@@ -1,0 +1,213 @@
+@font-face {
+
+  font-family: "Vazir";
+
+  src: url("font/Vazir.woff") format("woff");
+}
+@font-face {
+  font-family: "Vazir";
+  src: url("font/Vazir.woff2") format("woff2");
+}
+.mockchat,
+.mockchat *,
+.mockchat *:after,
+.mockchat *:before {
+  box-sizing: border-box;
+}
+* {
+  padding: 0; margin: 0;
+  font-family: "Vazir";
+}
+.mockchat {
+  position: relative;
+  color: #283747;
+  max-width: 300px;
+  margin: 0 auto;
+  height: auto;
+  line-height: 1.25;
+  perspective: 900px;
+  font-family: BlinkMacSystemFont, -apple-system, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+}
+.mockchat .device {
+  width: 100%;
+  margin: 0;
+  background: #F8C7CC;
+  padding-top: 200%;
+  border-radius: 50px;
+  box-shadow: 0 10px 40px rgba(40, 55, 71, 0.4);
+  position: relative;
+  background: #283747;
+  transition: all 0.5s;
+}
+.mockchat .device:before {
+  display: block;
+  content: "";
+  position: absolute;
+  height: 4%;
+  width: 40%;
+  background: #283747;
+  top: 10px;
+  left: 30%;
+  border-radius: 0 0 10px 10px;
+  z-index: 3;
+  border-top: transparent;
+}
+.mockchat .device:after {
+  display: block;
+  content: "";
+  position: absolute;
+  height: 1%;
+  width: 15%;
+  background: #161e26;
+  border-radius: 100px;
+  top: 18px;
+  left: 42.5%;
+  z-index: 3;
+  border-top: transparent;
+}
+.mockchat .device .screen {
+  position: absolute;
+  width: calc(100% - 20px);
+  height: calc(100% - 20px);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #FCF7FF;
+  background-image: linear-gradient(#FCF7FF, #e4eaf0);
+  box-shadow: inset 0 0 40px rgba(255, 255, 255, 0.7), 0 0 0 5px rgba(255, 255, 255, 0.15);
+  border-radius: 40px;
+  overflow: hidden;
+}
+.mockchat .app {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  align-content: flex-end;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  flex-direction: column;
+  padding: 1em;
+  overflow-y: scroll;
+  transition: all 0.3s;
+}
+.mockchat .reply {
+  transform-origin: 100% 50%;
+  margin: 0.25em 0 0.25em 1.5em !important;
+  width: calc(100% - 3em);
+  border-radius: 20px;
+  position: relative;
+  padding: 0.75em 1em;
+  box-shadow: 0 1px 10px rgba(0, 0, 0, 0.08);
+  opacity: 0;
+  transform: translateY(2em) scale(0.5);
+  -webkit-animation: mockchat-reply-pop cubic-bezier(0, 0.81, 0.58, 1.2) 0.4s;
+          animation: mockchat-reply-pop cubic-bezier(0, 0.81, 0.58, 1.2) 0.4s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  text-align: right;
+  transition: all 0.3s;
+  max-height: 0;
+}
+.mockchat .reply:nth-child(2n-1) {
+  transform-origin: 0 50%;
+  margin: 0.25em 1.5em 0.25em 1.5em !important;
+  width: calc(100% - 3em);
+  background: #1b2d4c;
+  color: white;
+  text-align: left;
+}
+.mockchat .reply:nth-child(2n-1):after {
+  display: block;
+  content: "";
+  background: #58D68D;
+  position: absolute;
+  height: 0.75em;
+  width: 0.75em;
+  left: -1.5em;
+  top: 1.375em;
+  border-radius: 99999px;
+  font-size: 0.75em;
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  line-height: 1;
+  font-weight: bold;
+}
+.mockchat .reply.dots {
+  transform-origin: 50% 50%;
+  margin: 0.25em 35% 0.25em 35% !important;
+  max-width: 30%;
+  text-align: center;
+  font-size: 1rem;
+  line-height: 1;
+}
+.mockchat .reply.dots:after {
+  display: none;
+}
+.mockchat .reply.dots span {
+  display: block;
+  height: 4px;
+  width: 4px;
+  background: currentColor;
+  display: inline-block;
+  border-radius: 99999px;
+  margin: 0.25em 0.15em;
+  opacity: 0;
+  -webkit-animation: mockchat-dots 0.5s infinite alternate;
+          animation: mockchat-dots 0.5s infinite alternate;
+  transform: translateY(0.25em);
+}
+.mockchat .reply.dots span:nth-child(2) {
+  -webkit-animation-delay: 0.1s;
+          animation-delay: 0.1s;
+}
+.mockchat .reply.dots span:nth-child(3) {
+  -webkit-animation-delay: 0.2s;
+          animation-delay: 0.2s;
+}
+
+@-webkit-keyframes mockchat-dots {
+  to {
+    transform: translateY(-0.2em);
+    opacity: 1;
+  }
+}
+
+@keyframes mockchat-dots {
+  to {
+    transform: translateY(-0.2em);
+    opacity: 1;
+  }
+}
+@-webkit-keyframes mockchat-blink {
+  to {
+    opacity: 1;
+  }
+}
+@keyframes mockchat-blink {
+  to {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes mockchat-reply-pop {
+  to {
+    transform: none;
+    font-size: 1rem;
+    opacity: 1;
+    max-height: 200px;
+  }
+}
+@keyframes mockchat-reply-pop {
+  to {
+    transform: none;
+    font-size: 1rem;
+    opacity: 1;
+    max-height: 200px;
+  }
+}
