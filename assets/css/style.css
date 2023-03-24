@@ -1,11 +1,11 @@
 @font-face {
   font-family: "Vazir";
 
-  src: url("Vazir.woff") format("woff");
+  src: url("/assets/fonts/Vazir.woff") format("woff");
 }
 @font-face {
   font-family: "Vazir";
-  src: url("Vazir.woff2") format("woff2");
+  src: url("/assets/fonts/Vazir.woff2") format("woff2");
 }
 .mockchat,
 .mockchat *,
